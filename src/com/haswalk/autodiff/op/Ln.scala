@@ -7,7 +7,7 @@ class Ln extends Op {
   }
 
   override def derivative(input: Array[Node], x: Variable): Node = {
-    input(0).derivative(x) / input(0)
+    input(0).d(x) / input(0)
   }
 }
 

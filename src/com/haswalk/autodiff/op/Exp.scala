@@ -10,6 +10,6 @@ class Exp extends Op{
   override def derivative(input: Array[Node], x: Variable): Node = {
     val fx = input(0)
     val hx = input(1)
-    (fx pow hx) * (hx * fx.derivative(x) / fx + Ln(fx) * hx.derivative(x))
+    (fx pow hx) * (hx * fx.d(x) / fx + Ln(fx) * hx.d(x))
   }
 }

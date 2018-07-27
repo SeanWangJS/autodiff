@@ -6,7 +6,9 @@ trait Node{
 
   def compute(map: Map[String, Double]): Double
 
-  def derivative(x: Variable): Node
+  def d(x: Variable): Node
+
+//  def grad(xs: Array[Variable]): Array[Node]
 
   def * (that: Node): Node = new OpNode(Array(this, that), new Multi)
 

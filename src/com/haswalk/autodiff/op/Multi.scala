@@ -9,6 +9,6 @@ class Multi extends Op{
   }
 
   override def derivative(input: Array[Node], x: Variable): Node = {
-    input(0) * input(1).derivative(x) + input(1) * input(0).derivative(x)
+    input(0) * input(1).d(x) + input(1) * input(0).d(x)
   }
 }

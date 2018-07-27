@@ -11,6 +11,6 @@ class Div extends Op{
   override def derivative(input: Array[Node], x: Variable): Node = {
     val fx = input(0)
     val hx = input(1)
-    (fx.derivative(x) * hx - fx * hx.derivative(x)) / (hx * hx)
+    (fx.d(x) * hx - fx * hx.d(x)) / (hx * hx)
   }
 }
