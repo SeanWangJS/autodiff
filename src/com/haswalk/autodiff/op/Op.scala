@@ -6,6 +6,6 @@ trait Op {
 
   def compute(input: Array[Node], map: Map[String, Double]): Double
 
-  def derivative(input: Array[Node], variable: Variable): Node
+  def derivative(input: Array[Node], x: Variable): Node
 
 }

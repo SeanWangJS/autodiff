@@ -9,5 +9,6 @@ class OpNode(
 
   override def compute(map: Map[String, Double]): Double = op.compute(input, map)
 
-  override def derivative(variable: Variable): Node = op.derivative(input, variable)
+  override def derivative(x: Variable): Node = op.derivative(input, x)
+
 }

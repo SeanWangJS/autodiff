@@ -6,16 +6,16 @@ trait Node{
 
   def compute(map: Map[String, Double]): Double
 
-  def derivative(variable: Variable): Node
+  def derivative(x: Variable): Node
 
-  def * (that: Node): Node = new OpNode(Array(this, that), new MultiOp)
+  def * (that: Node): Node = new OpNode(Array(this, that), new Multi)
 
-  def + (that: Node): Node = new OpNode(Array(this, that), new PlusOp)
+  def + (that: Node): Node = new OpNode(Array(this, that), new Plus)
 
-  def - (that: Node): Node = new OpNode(Array(this, that), new SubOp)
+  def - (that: Node): Node = new OpNode(Array(this, that), new Minus)
 
-  def / (that: Node): Node = new OpNode(Array(this, that), new DivOp)
+  def / (that: Node): Node = new OpNode(Array(this, that), new Div)
 
-//  def ^ (that: Node): Node = new OpNode(Array(this, that), new ExpOp)
+  def pow (that: Node): Node = new OpNode(Array(this, that), new Exp)
 
 }

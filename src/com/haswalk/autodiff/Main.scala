@@ -1,6 +1,7 @@
 package com.haswalk.autodiff
 
 import com.haswalk.autodiff.node.Node
+import com.haswalk.autodiff.op.{Ln, Sqrt}
 
 object Main {
   def main(args: Array[String]): Unit = {
@@ -11,9 +12,10 @@ object Main {
 
     val x = Ad.variable("x")
 
-    val o = (4 * x * x+ 10 * x + 10) * x
-    val d = o.derivative(x).compute(Map("x" -> 1))
-    print(d)
+    val node = Ln(Sqrt(x)) * x + 20 * (x pow 2) - 10
+    val d = node.derivative(x).compute(Map("x" -> 2.3))
+
+    println(d)
 
   }
 }
